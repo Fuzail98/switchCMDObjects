@@ -1,0 +1,323 @@
+########### Port/Interface/VLAN basic configuration commands #############
+1. {
+    name: "SET_IFDESC",
+    desc: "",
+    readOnly: false
+    neId: "<NE_Master.id>",
+    cmdList: [
+        {
+            cmd: "enable",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "config terminal",
+            validRegEx: ".*.*"
+        },
+        {
+            cmd: "interface __ifName__",
+            validRegEx: ".*.*"
+        },
+        {
+            cmd: "description __description__",
+            validRegEx: ".*.*"
+        },
+    ],
+    args: [
+        {
+            name: "description",
+            required: true
+        },
+        {
+            name: "ifName",
+            required: true
+        }
+    ]
+}
+
+2. {
+    name: "DEL_IFDESC",
+    desc: "",
+    readOnly: false
+    neId: "<NE_Master.id>",
+    cmdList: [
+        {
+            cmd: "enable",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "config terminal",
+            validRegEx: ".*.*"
+        },
+        {
+            cmd: "interface __ifName__",
+            validRegEx: ".*.*"
+        },
+        {
+            cmd: "no description",
+            validRegEx: ".*.*"
+        },
+    ],
+    args : [
+        {
+            name: "ifName",
+            required: true
+        }
+    ]
+}
+3. {
+    name: "GET_IFINFO",
+    desc: "",
+    readOnly: true,
+    neId: "<NE_Master.id>",
+    cmdList : [
+        {
+            cmd: "enable",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "show interface <opts>",
+            validRegEx: ".*.*"
+        },
+    ],
+    args : [
+        opts: [
+            {
+                name: "__ifName__",
+            },
+            {
+                name: "statistics __ifName__",
+            }
+        ],
+        {
+            name: "ifName",
+            required: true
+        }
+    ]
+}
+4. {
+    name: "SET_IF_SHUTDOWN",
+    desc: "",
+    readOnly : false,
+    neId: "<NE_Master.id>",
+    cmdList : [
+        {
+            cmd: "enable",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "config terminal",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "interface __ifName__",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "shutdown",
+            validRegEx: ".*.*"
+        },
+    ],
+    args : [
+        {
+            name: "ifName",
+            required: true
+        }
+    ]
+}
+5. {
+    name: "SET_IF_NOSHUTDOWN",
+    desc: "",
+    readOnly : false,
+    neId: "<NE_Master.id>",
+    cmdList : ["enable", "config terminal", "interface <ifName>", "no shutdown"],
+    cmdList : [
+        {
+            cmd: "enable",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "config terminal",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "interface __ifName__",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "no shutdown",
+            validRegEx: ".*.*"
+        },
+    ],
+    args : [
+        {
+            name: "ifName",
+            required: true
+        }
+    ]
+}
+6. {
+    name: "SET_IF_SPEED",
+    desc: "",
+    readOnly : false,
+    neId: "<NE_Master.id>",
+    cmdList : [
+        {
+            cmd: "enable",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "config terminal",
+            validRegEx: ".*.*"
+        },
+        {
+            cmd: "interface __ifName__",
+            validRegEx: ".*.*"
+        },
+        {
+            cmd: "speed <opts>",
+            validRegEx: ".*.*"
+        }
+    ],
+    args : [
+        opts: [
+            {
+                name: "autonegotiate",
+            },
+            {
+                name: "full-10",
+            },
+            {
+                name: "full-100",
+            },
+            {
+                name: "full-1000",
+            },
+            {
+                name: "half-10",
+            },
+            {
+                name: "half-100",
+            }
+        ],
+        {
+            name: "ifName",
+            required: true
+        }
+    ]
+}
+7. {
+    name: "SET_IF_MIRROR",
+    desc: "",
+    readOnly : false,
+    neId: "<NE_Master.id>",
+    cmdList : [
+        {
+            cmd: "enable",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "config terminal",
+            validRegEx: ".*.*"
+        },
+        {
+            cmd: "interface __ifName1__",
+            validRegEx: ".*.*"
+        },
+        {
+            cmd: "mirror interface __ifName2__ direction <opts>",
+            validRegEx: ".*.*"
+        }
+    ],
+    args : [
+        opts: [
+            {
+                name: "both",
+            },
+            {
+                name: "receive",
+            },
+            {
+                name: "transmit",
+            }
+        ],
+        {
+            name: "ifName1",
+            required: true
+        },
+        {
+            name: "ifName2",
+            required: true
+        }
+    ]
+}
+
+8. {
+    name: "SET_IF_NO_MIRROR",
+    desc: "",
+    readOnly : false,
+    neId: "<NE_Master.id>",
+    cmdList : [
+        {
+            cmd: "enable",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "config terminal",
+            validRegEx: ".*.*"
+        },
+        {
+            cmd: "interface __ifName1__",
+            validRegEx: ".*.*"
+        },
+        {
+            cmd: "no mirror interface __ifName2__ direction <opts>",
+            validRegEx: ".*.*"
+        }
+    ],
+    args : [
+        opts: [
+            {
+                name: "receive",
+            },
+            {
+                name: "transmit",
+            }
+        ],
+        {
+            name: "ifName1",
+            required: true
+        },
+        {
+            name: "ifName2",
+            required: true
+        }
+    ]
+}
+
+9. {
+    name: "GET_MIRROR_INFO",
+    desc: "",
+    readOnly: true,
+    neId: "<NE_Master.id>"
+    cmdList: [
+        {
+            cmd: "enable",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "show mirror <opts>",
+            validRegEx: ".*.*"
+        }
+    ],
+    args: [
+        opts: [
+            {
+                name: "interface __ifName__"
+            }
+        ],
+        {
+            name: "ifName",
+            required: true
+        }
+    ]
+}

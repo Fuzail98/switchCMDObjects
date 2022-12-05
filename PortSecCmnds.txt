@@ -1,0 +1,27 @@
+########### Port Security #############
+1. SW_GET_BRIDGE_FDB : {
+    cmdList : ["enable", "show brdige fdb <opts>"],
+    readOnly : true,
+    opts : ["dynamic", "interface <ifName>", "static", "vlan <vlanID>"]
+    args: [
+		{
+            name: "ifName",
+            required: true,
+        },
+        {
+            name: "vlanID"
+            required: true,
+        }
+    ]
+}
+2. SW_DEL_MAC_TABLE : {
+    cmdList : ["enable", "clear mac address-table dynamic <opts>"]
+    readOnly : false,
+    opts : ["interface <ifName>"]
+    args : [
+        {
+            name: "ifName",
+            required: true
+        }
+    ]
+}
