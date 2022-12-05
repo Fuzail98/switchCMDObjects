@@ -1,0 +1,131 @@
+1. {
+    "name": "SAVE_CURRENT_CONFIG",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*" 
+        },
+        {
+            "cmd": "copy running-config startup-config",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*Building.*"
+        } 
+    ]
+}
+2. {
+    "name": "FACTORY_DEFAULT",
+    "desc": "",
+    "readOnly" : false,
+    "neId": "<NE_Master.id>",
+    "cmdList" : [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        { 
+            "cmd": "delete startup-config",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "Y",
+            "validRegEx": ".*.*"
+        }
+    ],
+}
+3. {
+    "name": "DOWNLOAD_CONFIG",
+    "desc": "",
+    "readOnly" : false,
+    "neId": "<NE_Master.id>",
+    "cmdList" : [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "download configure __ipAddress__ __filename__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*Building.*"
+        }
+    ],
+    "args": [
+		{
+            "name": "ipAddress",
+            "required": true,
+        },
+        {
+            "name": "filename",
+            "required": true,
+        }
+    ]
+}
+4. {
+    "name": "UPLOAD_CONFIG",
+    "desc": "",
+    "readOnly" : false,
+    "neId": "<NE_Master.id>",
+    "cmdList" : [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "upload configure <ip address> <file-name>",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+		{
+            "name": "ipAddress",
+            "required": true,
+        },
+        {
+            "name": "filename",
+            "required": true,
+        }
+    ]
+}
+5. {
+    "name": "GET_RUNNING_CONFIG",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id",
+    "cmdList" : [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "show running-config",
+            "validRegEx": ".*.*"
+        }
+    ]
+}
+6. {
+    "name": "GET_STARTUP_CONFIG",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList" : [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "show startup-config",
+            "validRegEx": ".*.*"
+        }
+    ]
+}
+
+
+

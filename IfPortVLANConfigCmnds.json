@@ -1,0 +1,546 @@
+########### Port/Interface/VLAN basic configuration commands #############
+1. {
+    "name": "SET_IFDESC",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "interface __ifname__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "description __description__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "description",
+            "required": true
+        },
+        {
+            "name": "ifname",
+            "required": true
+        }
+    ]
+}
+
+2. {
+    "name": "DEL_IFDESC",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "interface __ifname__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "no description",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args" : [
+        {
+            "name": "ifname",
+            "required": true
+        }
+    ]
+}
+3. {
+    "name": "GET_IFINFO",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList" : [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "show interface __ifname__",
+            "validRegEx": ".*.*"
+        },
+    ],
+    "args" : [
+        {
+            "name": "ifname",
+            "required": true
+        }
+    ]
+}
+4. {
+    "name": "SET_IF_SHUTDOWN",
+    "desc": "",
+    "readOnly" : false,
+    "neId": "<NE_Master.id>",
+    "cmdList" : [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "interface __ifname__",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "shutdown",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args" : [
+        {
+            "name": "ifname",
+            "required": true
+        }
+    ]
+}
+5. {
+    "name": "SET_IF_NOSHUTDOWN",
+    "desc": "",
+    "readOnly" : false,
+    "neId": "<NE_Master.id>",
+    "cmdList" : [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "interface __ifname__",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "no shutdown",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args" : [
+        {
+            "name": "ifname",
+            "required": true
+        }
+    ]
+}
+
+6. {
+    "name": "SET_IF_SPEED",
+    "desc": "",
+    "readOnly" : false,
+    "neId": "<NE_Master.id>",
+    "cmdList" : [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "interface __ifname__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "speed <opts>",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args" : [
+        "opts": [
+            {
+                "name": "autonegotiate",
+            },
+            {
+                "name": "full-10",
+            },
+            {
+                "name": "full-100",
+            },
+            {
+                "name": "full-1000",
+            },
+            {
+                "name": "half-10",
+            },
+            {
+                "name": "half-100",
+            }
+        ],
+        {
+            "name": "ifname",
+            "required": true
+        }
+    ]
+}
+
+// 7. {
+//     "name": "SET_IF_MIRROR",
+//     "desc": "",
+//     "readOnly" : false,
+//     "neId": "<NE_Master.id>",
+//     "cmdList" : [
+//         {
+//             "cmd": "enable",
+//             "validRegEx": ".*#.*"
+//         },
+//         {
+//             "cmd": "config terminal",
+//             "validRegEx": ".*.*"
+//         },
+//         {
+//             "cmd": "interface __ifname1__",
+//             "validRegEx": ".*.*"
+//         },
+//         {
+//             "cmd": "mirror interface __ifname2__ direction <opts>",
+//             "validRegEx": ".*.*"
+//         }
+//     ],
+//     "args" : [
+//         "opts" : [
+//             {
+//                 "name": "both",
+//             },
+//             {
+//                 "name": "receive",
+//             },
+//             {
+//                 "name": "transmit",
+//             }
+//         ],
+//         {
+//             "name": "ifname1",
+//             "required": true
+//         },
+//         {
+//             "name": "ifname2",
+//             "required": true
+//         }
+//     ]
+// }
+
+// 8. {
+//     "name": "SET_IF_NO_MIRROR",
+//     "desc": "",
+//     "readOnly" : false,
+//     "neId": "<NE_Master.id>",
+//     "cmdList" : [
+//         {
+//             "cmd": "enable",
+//             "validRegEx": ".*#.*"
+//         },
+//         {
+//             "cmd": "config terminal",
+//             "validRegEx": ".*.*"
+//         },
+//         {
+//             "cmd": "interface __ifname1__",
+//             "validRegEx": ".*.*"
+//         },
+//         {
+//             "cmd": "no mirror interface __ifname2__ direction <opts>",
+//             "validRegEx": ".*.*"
+//         }
+//     ],
+//     "args" : [
+//         "opts": [
+//             {
+//                 "name": "receive",
+//             },
+//             {
+//                 "name": "transmit",
+//             }
+//         ],
+//         {
+//             "name": "ifname1",
+//             "required": true
+//         },
+//         {
+//             "name": "ifname2",
+//             "required": true
+//         }
+//     ]
+// }
+
+9. {
+    "name": "GET_MIRROR_INFO",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "show mirror",
+            "validRegEx": ".*.*"
+        }
+    ]
+}
+
+
+10. {
+    "name": "CREATE_VLAN",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "vlan database",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "vlan __vlanId__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "vlanId",
+            "required": true,
+        }
+    ]
+}
+
+11. {
+    "name": "DEL_VLAN",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "vlan database",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "no vlan __vlanId__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "vlanId",
+            "required": true,
+        }
+    ]
+}
+
+12. {
+    "name": "SET_IF_ACCESS",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "interface __ifName__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "switchport access vlan __vlanId__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "ifName",
+            "required": true
+        },
+        {
+            "name": "vlanId",
+            "required": true
+        }
+    ]
+}
+
+13. {
+    "name": "SET_IF_DEFAULT_ACCESS",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "interface __ifName__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "no switchport access vlan",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "ifName",
+            "required": true
+        },
+        {
+            "name": "vlanId",
+            "required": true
+        }
+    ]
+}

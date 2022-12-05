@@ -1,0 +1,109 @@
+########### Network Debugging/troubleshooting commands #############
+1. {
+    "name": "PING",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "ping __ipAddress__",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "ipAddress",
+            "required": true
+        }
+    ]
+}
+
+2. {
+    "name": "TRACEROUTE",
+    "desc": "",
+    "readOnly" : true,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "trace-route __ipAddress__",
+            "validRegEx": ".*#.*"
+        }
+    ],
+    "args" : [
+        {
+            "name": "ipAddress",
+            "required": true
+        },
+    ]
+}
+
+3. {
+    "name": "GET_PRIV_HISTORY",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "show history",
+            "validRegEx": ".*.*"
+        }
+    ]
+}
+4. {
+    "name": "GET_NORM_HISTORY",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "show history",
+            "validRegEx": ".*.*"
+        }
+    ]
+}
+
+5. {
+    "name": "RESTART",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "reset",
+            "validRegEx": ".*.*"
+        }
+    ]
+}
+
+6. {
+    "name": "GET_SERVICES_STATUS",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "show security-manage",
+            "validRegEx": ".*.*"
+        }
+    ]
+}

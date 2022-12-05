@@ -1,0 +1,618 @@
+1. {
+    "name": "GET_BRIDGE_FDB",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "show bridge fdb",
+            "validRegEx": ".*#.*"
+        }
+    ],
+}
+
+2. {
+    "name": "GET_IF_BRIDGE_FDB",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "show bridge fdb interface __ifName__",
+            "validRegEx": ".*#.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "ifName",
+            "required": true,
+        }
+    ]
+}
+
+3. {
+    "name": "DEL_MAC_TABLE",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "clear mac address-table dynamic",
+            "validRegEx": ".*#.*"
+        },
+    ],
+}
+
+4. {
+    "name": "DEL_IF_MAC_TABLE",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "clear mac address-table dynamic interface __ifName__",
+            "validRegEx": ".*#.*"
+        },
+    ],
+    "args": [
+        {
+            "name": "ifName",
+            "required": true,
+        }
+    ]
+}
+
+5. {
+    "name": "SET_IF_PORT_PROTECT",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "interface __ifName__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "switchport port-security protect",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "__ifName__",
+            "required": true,
+        }
+    ]
+}
+
+6. {
+    "name": "SET_IF_NO_PORT_PROTECT",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "interface __ifName__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "no switchport port-security protect",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "__ifName__",
+            "required": true,
+        }
+    ]
+}
+
+7. {
+    "name": "GET_IF_PORT_PROTECT",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "show port-security protect",
+            "validRegEx": ".*.*"
+        }
+    ],
+}
+
+8. {
+    "name": "SET_IF_MAC_BIND",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "interface __ifName__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "switchport port-security mac-bind __macAddress__ vlan __vlanId__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+
+    ],
+    "args": [
+        {
+            "name": "ifName",
+            "required": true,
+        },
+        {
+            "name": "macAddress",
+            "required": true,
+        },
+        {
+            "name": "vlanId",
+            "required": true,
+        },
+    ]
+}
+
+9. {
+    "name": "SET_IF_NO_MAC_BIND",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "interface __ifName__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "no switchport port-security mac-bind __macAddress_ vlan __vlanId__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "ifName",
+            "required": true,
+        },
+        {
+            "name": "macAddress",
+            "required": true,
+        },
+        {
+            "name": "vlanId",
+            "required": true,
+        }
+    ]
+}
+
+10. {
+    "name": "GET_MAC_BIND",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "show port-security mac-bind",
+            "validRegEx": ".*.*"
+        }
+    ]
+}
+
+11. {
+    "name": "GET_IF_MAC_BIND",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "show port-security mac-bind __ifName__",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "ifName",
+            "required": true,
+        }
+    ]
+}
+
+12. {
+    "name": "SET_IF_MAC_FILTER",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "interface __ifName__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "switchport port-security mac-filter __macAddress__ vlan __vlanId__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+
+    ],
+    "args": [
+        {
+            "name": "ifName",
+            "required": true,
+        },
+        {
+            "name": "macAddress",
+            "required": true,
+        },
+        {
+            "name": "vlanId",
+            "required": true,
+        },
+    ]
+}
+
+13. {
+    "name": "SET_IF_NO_MAC_FILTER",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "interface __ifName__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "no switchport port-security mac-filter __macAddress_ vlan __vlanId__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "ifName",
+            "required": true,
+        },
+        {
+            "name": "macAddress",
+            "required": true,
+        },
+        {
+            "name": "vlanId",
+            "required": true,
+        }
+    ]
+}
+
+14. {
+    "name": "GET_MAC_FILTER",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "show port-security mac-filter",
+            "validRegEx": ".*.*"
+        }
+    ]
+}
+
+15. {
+    "name": "GET_IF_MAC_FILTER",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "show port-security mac-filter __ifName__",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "ifName",
+            "required": true,
+        }
+    ]
+}
+
+16. {
+    "name": "SET_IF_LEARN_LIMIT",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "interface __ifName__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "switchport port-security learn-limit __limit__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "ifName",
+            "required": true,
+        },
+        {
+            "name": "limit",
+            "required": true,
+            "range": [0, 8191]
+        }
+    ]
+}
+
+17. {
+    "name": "SET_IF_NO_LEARN_LIMIT",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "interface __ifName__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "no switchport port-security learn-limit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "ifName",
+            "required": true,
+        }
+    ]
+}
+
+18. {
+    "name": "GET_LEARN_LIMIT",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "show port-security learn-limit",
+            "validRegEx": ".*.*"
+        }
+    ]
+}
+
+19. {
+    "name": "GET_IF_LEARN_LIMIT",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "show port-security learn-limit __ifName__",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "ifName",
+            "required": true,
+        }
+    ]
+}
+
+{
+    "name": "",
+    "desc": "",
+    "readOnly": ,
+    "neId": "<NE_MASTER.id>",
+    "cmdList": [
+        {
+            "cmd": "",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args": [
+        {
+            "name": "",
+            "required": ,
+        }
+    ]
+}
