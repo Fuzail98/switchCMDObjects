@@ -1,0 +1,81 @@
+1. {
+    name: "GET_VERSION",
+    desc: "",
+    readOnly: true,
+    neId: "<NE_Master.id",
+    cmdList : [
+        {
+            cmd: "enable",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "show version",
+            validRegEx: ".*.*"
+        }
+    ]
+}
+
+2. {
+    name: "GET_SWITCH",
+    desc: "",
+    readOnly: true,
+    neId: "<NE_Master.id",
+    cmdList : [
+        {
+            cmd: "enable",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "show switch",
+            validRegEx: ".*.*"
+        }
+    ]
+}
+
+3. {
+    name: "SET_HOSTNAME",
+    desc: "",
+    readOnly: false,
+    neId: "<NE_Master.id",
+    cmdList : [
+        {
+            cmd: "enable",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "config terminal",
+            validRegEx: ".*.*"
+        },
+        {
+            cmd: "hostname __hostName__",
+            validRegEx: ".*.*"
+        },
+    ],
+    args: [
+		{
+            name: "hostName",
+            required: true,
+        }
+    ]
+}
+
+4. {
+    name: "SET_DEFAULT_HOSTNAME",
+    desc: "",
+    readOnly: false,
+    neId: "<NE_Master.id",
+    cmdList : [
+        {
+            cmd: "enable",
+            validRegEx: ".*#.*"
+        },
+        {
+            cmd: "config terminal",
+            validRegEx: ".*(config).*"
+        },
+        {
+            cmd: "no hostname",
+            validRegEx: ".*Switch.*"
+        }
+    ]
+}
