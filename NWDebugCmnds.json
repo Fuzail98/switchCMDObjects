@@ -56,17 +56,26 @@
             "validRegEx": ".*#.*"
         },
         {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
+        },
+        {
             "cmd": "show history",
             "validRegEx": ".*.*"
         }
     ]
 }
+
 4. {
     "name": "GET_NORM_HISTORY",
     "desc": "",
     "readOnly": true,
     "neId": "<NE_Master.id>",
     "cmdList": [
+        {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
+        },
         {
             "cmd": "show history",
             "validRegEx": ".*.*"
@@ -100,6 +109,10 @@
         {
             "cmd": "enable",
             "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
         },
         {
             "cmd": "show security-manage",

@@ -9,6 +9,10 @@
             "validRegEx": ".*#.*"
         },
         {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
+        },
+        {
             "cmd": "show version",
             "validRegEx": ".*.*"
         }
@@ -24,6 +28,10 @@
         {
             "cmd": "enable",
             "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
         },
         {
             "cmd": "show switch",

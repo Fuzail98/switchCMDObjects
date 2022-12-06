@@ -18,6 +18,7 @@
         } 
     ]
 }
+
 2. {
     "name": "FACTORY_DEFAULT",
     "desc": "",
@@ -38,6 +39,7 @@
         }
     ],
 }
+
 3. {
     "name": "DOWNLOAD_CONFIG",
     "desc": "",
@@ -68,6 +70,7 @@
         }
     ]
 }
+
 4. {
     "name": "UPLOAD_CONFIG",
     "desc": "",
@@ -94,6 +97,7 @@
         }
     ]
 }
+
 5. {
     "name": "GET_RUNNING_CONFIG",
     "desc": "",
@@ -105,11 +109,16 @@
             "validRegEx": ".*#.*"
         },
         {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
+        },
+        {
             "cmd": "show running-config",
             "validRegEx": ".*.*"
         }
     ]
 }
+
 6. {
     "name": "GET_STARTUP_CONFIG",
     "desc": "",
@@ -119,6 +128,10 @@
         {
             "cmd": "enable",
             "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
         },
         {
             "cmd": "show startup-config",

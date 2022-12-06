@@ -1,6 +1,5 @@
-########### Port/Interface/VLAN basic configuration commands #############
 1. {
-    "name": "SET_IFDESC",
+    "name": "SET_IF_DESC",
     "desc": "",
     "readOnly": false,
     "neId": "<NE_Master.id>",
@@ -47,7 +46,7 @@
 }
 
 2. {
-    "name": "DEL_IFDESC",
+    "name": "DEL_IF_DESC",
     "desc": "",
     "readOnly": false,
     "neId": "<NE_Master.id>",
@@ -88,8 +87,9 @@
         }
     ]
 }
+
 3. {
-    "name": "GET_IFINFO",
+    "name": "GET_IF_INFO",
     "desc": "",
     "readOnly": true,
     "neId": "<NE_Master.id>",
@@ -97,6 +97,10 @@
         {
             "cmd": "enable",
             "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
         },
         {
             "cmd": "show interface __ifname__",
@@ -110,6 +114,7 @@
         }
     ]
 }
+
 4. {
     "name": "SET_IF_SHUTDOWN",
     "desc": "",
@@ -152,8 +157,9 @@
         }
     ]
 }
+
 5. {
-    "name": "SET_IF_NOSHUTDOWN",
+    "name": "SET_IF_NO_SHUTDOWN",
     "desc": "",
     "readOnly" : false,
     "neId": "<NE_Master.id>",
@@ -195,68 +201,68 @@
     ]
 }
 
-6. {
-    "name": "SET_IF_SPEED",
-    "desc": "",
-    "readOnly" : false,
-    "neId": "<NE_Master.id>",
-    "cmdList" : [
-        {
-            "cmd": "enable",
-            "validRegEx": ".*#.*"
-        },
-        {
-            "cmd": "config terminal",
-            "validRegEx": ".*.*"
-        },
-        {
-            "cmd": "interface __ifname__",
-            "validRegEx": ".*.*"
-        },
-        {
-            "cmd": "speed <opts>",
-            "validRegEx": ".*.*"
-        },
-        {
-            "cmd": "exit",
-            "validRegEx": ".*.*"
-        },
-        {
-            "cmd": "exit",
-            "validRegEx": ".*.*"
-        },
-        {
-            "cmd": "write",
-            "validRegEx": ".*.*"
-        }
-    ],
-    "args" : [
-        "opts": [
-            {
-                "name": "autonegotiate",
-            },
-            {
-                "name": "full-10",
-            },
-            {
-                "name": "full-100",
-            },
-            {
-                "name": "full-1000",
-            },
-            {
-                "name": "half-10",
-            },
-            {
-                "name": "half-100",
-            }
-        ],
-        {
-            "name": "ifname",
-            "required": true
-        }
-    ]
-}
+// 6. {
+//     "name": "SET_IF_SPEED",
+//     "desc": "",
+//     "readOnly" : false,
+//     "neId": "<NE_Master.id>",
+//     "cmdList" : [
+//         {
+//             "cmd": "enable",
+//             "validRegEx": ".*#.*"
+//         },
+//         {
+//             "cmd": "config terminal",
+//             "validRegEx": ".*.*"
+//         },
+//         {
+//             "cmd": "interface __ifname__",
+//             "validRegEx": ".*.*"
+//         },
+//         {
+//             "cmd": "speed <opts>",
+//             "validRegEx": ".*.*"
+//         },
+//         {
+//             "cmd": "exit",
+//             "validRegEx": ".*.*"
+//         },
+//         {
+//             "cmd": "exit",
+//             "validRegEx": ".*.*"
+//         },
+//         {
+//             "cmd": "write",
+//             "validRegEx": ".*.*"
+//         }
+//     ],
+//     "args" : [
+//         "opts": [
+//             {
+//                 "name": "autonegotiate",
+//             },
+//             {
+//                 "name": "full-10",
+//             },
+//             {
+//                 "name": "full-100",
+//             },
+//             {
+//                 "name": "full-1000",
+//             },
+//             {
+//                 "name": "half-10",
+//             },
+//             {
+//                 "name": "half-100",
+//             }
+//         ],
+//         {
+//             "name": "ifname",
+//             "required": true
+//         }
+//     ]
+// }
 
 // 7. {
 //     "name": "SET_IF_MIRROR",
@@ -358,17 +364,20 @@
             "validRegEx": ".*#.*"
         },
         {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
+        },
+        {
             "cmd": "show mirror",
             "validRegEx": ".*.*"
         }
     ]
 }
 
-
 10. {
-    "name": "CREATE_VLAN",
+    "name": "SET_NEW_VLAN",
     "desc": "",
-    "readOnly": true,
+    "readOnly": false,
     "neId": "<NE_Master.id>",
     "cmdList": [
         {
@@ -392,6 +401,22 @@
             "validRegEx": ".*.*"
         },
         {
+            "cmd": "ip interface vlan __vlanId__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "interface vlan__vlanId__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "ip address __ipAddress__/__subnet__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
             "cmd": "exit",
             "validRegEx": ".*.*"
         },
@@ -404,6 +429,14 @@
         {
             "name": "vlanId",
             "required": true,
+        },
+        {
+            "name": "ipAddress",
+            "required": true,
+        },
+        {
+            "name": "subnet",
+            "required": true,
         }
     ]
 }
@@ -411,7 +444,7 @@
 11. {
     "name": "DEL_VLAN",
     "desc": "",
-    "readOnly": true,
+    "readOnly": false,
     "neId": "<NE_Master.id>",
     "cmdList": [
         {
@@ -452,9 +485,9 @@
 }
 
 12. {
-    "name": "SET_IF_ACCESS",
+    "name": "SET_IF_VLAN_ACCESS",
     "desc": "",
-    "readOnly": true,
+    "readOnly": false,
     "neId": "<NE_Master.id>",
     "cmdList": [
         {
@@ -501,7 +534,7 @@
 13. {
     "name": "SET_IF_DEFAULT_ACCESS",
     "desc": "",
-    "readOnly": true,
+    "readOnly": false,
     "neId": "<NE_Master.id>",
     "cmdList": [
         {
@@ -544,3 +577,110 @@
         }
     ]
 }
+
+14. {
+    "name": "GET_ALL_VLAN_INFO",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "show vlan",
+            "validRegEx": ".*.*"
+        }
+    ]
+}
+
+15. {
+    "name": "GET_VLAN_INFO",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "show vlan __vlanId__",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args":[
+        {
+            "name": "vlanId",
+            "required": true,
+        }
+    ]
+}
+
+// {
+//     reqId
+//     sessionId
+//     asAgentId
+//     reqtime
+//     neInfo:{
+//         hostIp
+//         hostPort
+//         channelType
+//     }
+//     opInfo:{
+//         "name": "SET_IF_DEFAULT_ACCESS",
+//         "desc": "",
+//         "readOnly": true,
+//         "neId": "<NE_Master.id>",
+//         "cmdList": [
+//             {
+//                 "cmd": "enable",
+//                 "validRegEx": ".*#.*"
+//             },
+//             {
+//                 "cmd": "config terminal",
+//                 "validRegEx": ".*.*"
+//             },
+//             {
+//                 "cmd": "interface __ifName__",
+//                 "validRegEx": ".*.*"
+//             },
+//             {
+//                 "cmd": "no switchport access vlan",
+//                 "validRegEx": ".*.*"
+//             },
+//             {
+//                 "cmd": "exit",
+//                 "validRegEx": ".*.*"
+//             },
+//             {
+//                 "cmd": "exit",
+//                 "validRegEx": ".*.*"
+//             },
+//             {
+//                 "cmd": "write",
+//                 "validRegEx": ".*.*"
+//             }
+//         ],
+//         "args": [
+//             {
+//                 "name": "ifName",
+//                 "required": true
+//             },
+//             {
+//                 "name": "vlanId",
+//                 "required": true
+//             }
+//         ]
+//     }
+// }
+// AS73

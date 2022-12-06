@@ -1,0 +1,293 @@
+1. {
+    "name": "SET_IP_ROUTE",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "ip route __ipAddress__/__subnet__ __gatewayIp__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args":[
+        {
+            "name": "ipAddress",
+            "required": true,
+        },
+        {
+            "name": "subnet",
+            "required": true,
+        },
+        {
+            "name": "gatewayIp",
+            "required": true,
+        }
+    ]
+}
+
+2. {
+    "name": "GET_IP_ROUTE",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "show ip route",
+            "validRegEx": ".*.*"
+        }
+    ]
+}
+
+3. {
+    "name": "SET_STATIC_ARP_ENTRY",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "arp __ipAddress__ __macAddress__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args":[
+        {
+            "name": "ipAddress",
+            "required": true,
+        },
+        {
+            "name": "macAddress",
+            "required": true,
+        }
+    ]
+}
+
+4. {
+    "name": "DEL_ALL_ARP_ENTRY",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "no arp all",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+}
+
+5. {
+    "name": "DEL_STATIC_ARP_ENTRY",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "no arp static",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+}
+
+6. {
+    "name": "DEL_DYNAMIC_ARP_ENTRY",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "no arp dynamic",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+}
+
+7. {
+    "name": "DEL_IP_ARP_ENTRY",
+    "desc": "",
+    "readOnly": false,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "config terminal",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "no arp __ipAddress__",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "exit",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args":[
+        {
+            "name": "ipAddress",
+            "required": true
+        }
+    ]
+}
+
+8. {
+    "name": "GET_ARP_TABLE",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "show arp",
+            "validRegEx": ".*.*"
+        }
+    ]
+}
+
+9. {
+    "name": "GET_IP_INFO",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "show ip interface brief",
+            "validRegEx": ".*.*"
+        }
+    ]
+}
+
+10. {
+    "name": "GET_IP_IF_INFO",
+    "desc": "",
+    "readOnly": true,
+    "neId": "<NE_Master.id>",
+    "cmdList": [
+        {
+            "cmd": "enable",
+            "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
+        },
+        {
+            "cmd": "show ip interface __ifName__ brief",
+            "validRegEx": ".*.*"
+        }
+    ],
+    "args":[
+        {
+            "name": "ifName",
+            "required": true  
+        }
+    ]
+}

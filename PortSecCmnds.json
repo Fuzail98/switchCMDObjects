@@ -9,6 +9,10 @@
             "validRegEx": ".*#.*"
         },
         {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
+        },
+        {
             "cmd": "show bridge fdb",
             "validRegEx": ".*#.*"
         }
@@ -24,6 +28,10 @@
         {
             "cmd": "enable",
             "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
         },
         {
             "cmd": "show bridge fdb interface __ifName__",
@@ -52,6 +60,10 @@
             "cmd": "clear mac address-table dynamic",
             "validRegEx": ".*#.*"
         },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
     ],
 }
 
@@ -69,6 +81,10 @@
             "cmd": "clear mac address-table dynamic interface __ifName__",
             "validRegEx": ".*#.*"
         },
+        {
+            "cmd": "write",
+            "validRegEx": ".*.*"
+        }
     ],
     "args": [
         {
@@ -173,6 +189,10 @@
         {
             "cmd": "enable",
             "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
         },
         {
             "cmd": "show port-security protect",
@@ -295,6 +315,10 @@
             "validRegEx": ".*#.*"
         },
         {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
+        },
+        {
             "cmd": "show port-security mac-bind",
             "validRegEx": ".*.*"
         }
@@ -310,6 +334,10 @@
         {
             "cmd": "enable",
             "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
         },
         {
             "cmd": "show port-security mac-bind __ifName__",
@@ -438,6 +466,10 @@
             "validRegEx": ".*#.*"
         },
         {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
+        },
+        {
             "cmd": "show port-security mac-filter",
             "validRegEx": ".*.*"
         }
@@ -453,6 +485,10 @@
         {
             "cmd": "enable",
             "validRegEx": ".*#.*"
+        },
+        {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
         },
         {
             "cmd": "show port-security mac-filter __ifName__",
@@ -569,6 +605,10 @@
             "validRegEx": ".*#.*"
         },
         {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
+        },
+        {
             "cmd": "show port-security learn-limit",
             "validRegEx": ".*.*"
         }
@@ -586,6 +626,10 @@
             "validRegEx": ".*#.*"
         },
         {
+            "cmd": "terminal length 0",
+            "validRegEx": ".*.*"
+        },
+        {
             "cmd": "show port-security learn-limit __ifName__",
             "validRegEx": ".*.*"
         }
@@ -594,25 +638,6 @@
         {
             "name": "ifName",
             "required": true,
-        }
-    ]
-}
-
-{
-    "name": "",
-    "desc": "",
-    "readOnly": ,
-    "neId": "<NE_MASTER.id>",
-    "cmdList": [
-        {
-            "cmd": "",
-            "validRegEx": ".*.*"
-        }
-    ],
-    "args": [
-        {
-            "name": "",
-            "required": ,
         }
     ]
 }
