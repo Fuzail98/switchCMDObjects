@@ -1,0 +1,17 @@
+{
+  "name": "ssh",
+  "version": "1.0.0",
+  "description": "",
+  "main": "ssh_test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "node-nmap": "^4.0.0",
+    "node-ssh": "^13.0.0",
+    "node-sudo-nmap": "^4.0.4",
+    "simple-ssh": "^1.1.1"
+  }
+}

@@ -1,0 +1,34 @@
+1.1.2 disable
+1.2.4 download image
+1.3.1 enable password
+1.3.2 exec-timeout
+1.3.4 password
+1.3.9 who
+1.3.10 line vty
+1.5.1 brdige ageing-time
+1.6.3 telnet
+1.8 all 
+2.1.1 interface
+2.3, 2.4, 2.5, 2.6, 2.8 
+3.1.2 Mac-bind auto conversion
+3.2.2 Mac-filter auto conversion
+4 Loopback
+5 ip mac-bind (Need to R&D)
+6.2.2 to 6.2.11
+7, 8, 9 (AAA), 10 (IGMP), 11 (ACL)
+12.1.2 arp static
+13.1.2 snmp trap
+13.1.4 snmp engine-id
+13.1.5 snmp user
+13.1.6 snmp group
+13.2.2 show snmp trap
+13.2.4 show snmp engine-id
+13.2.5 show snmp user
+13.2.6 show snmp group
+14 System log commands
+15 EAPS
+16 NDP
+
+
+
+Last command "objected" : 13.2.3

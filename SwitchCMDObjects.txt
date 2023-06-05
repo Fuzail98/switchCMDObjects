@@ -1,0 +1,36 @@
+// NE_Models
+{
+	_id: "",
+	name: "",
+	desc: "",
+	model: "",
+	vendorCode: "",
+	fwVersion: "",
+	neType: "" 	// GATEWAY/AP/Sw/Fw
+}
+
+// NE_Operations
+{
+    name: "ENABLE_POE", // Get multiple OIDs values via SNMP
+    desc: "", 
+    readOnly: false,
+    neId: "<NE_Master.id>",
+    "args": [
+		{
+            name: "port",
+            required: true,
+			default: ""
+        }
+    ],
+    cmdList: [{
+            "cmd": "enable",
+            "validRegEx": ".*#.*",
+        }, {
+            "cmd": "config terminal",
+            "validRegEx": "",
+        }, {
+            "cmd": "interface __port__",
+            "validRegEx": "",
+        }
+    ]
+}
